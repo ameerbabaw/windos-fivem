@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🇵🇸 FREE PALESTINE 🇵🇸</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #000000 0%, #0a1a0a 50%, #004d00 100%);
+            font-family: 'Courier New', monospace;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* تأثير غبار الشاشة */
+        .noise {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" opacity="0.05"><rect x="0" y="0" width="200" height="200" fill="black"/><rect x="10" y="10" width="2" height="2" fill="white"/><rect x="50" y="30" width="1" height="1" fill="white"/><rect x="90" y="70" width="2" height="2" fill="white"/><rect x="130" y="50" width="1" height="1" fill="white"/><rect x="170" y="90" width="2" height="2" fill="white"/><rect x="30" y="120" width="1" height="1" fill="white"/><rect x="70" y="150" width="2" height="2" fill="white"/><rect x="110" y="130" width="1" height="1" fill="white"/><rect x="150" y="170" width="2" height="2" fill="white"/></svg>');
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .container {
+            text-align: center;
+            z-index: 2;
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* العلم الفلسطيني */
+        .flag {
+            width: 200px;
+            height: 100px;
+            margin: 10px auto;
+            position: relative;
+            background: linear-gradient(180deg, 
+                #000000 0%, #000000 33%,
+                #ffffff 33%, #ffffff 66%,
+                #009900 66%, #009900 100%);
+            border: 2px solid #ff0000;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0,255,0,0.3);
+        }
+
+        .flag::before {
+            content: "▲";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 50px 0 50px 55px;
+            border-color: transparent transparent transparent #ff0000;
+            font-size: 0;
+            line-height: 0;
+        }
+
+        /* عنوان فلسطين */
+        .palestine-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #00ff00;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        /* IP Box */
+        .ip-box {
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid #00ff00;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px auto;
+            display: inline-block;
+            width: 100%;
+            max-width: 350px;
+        }
+
+        .ip-label {
+            color: #888;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .ip-address {
+            color: #00ff00;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+
+        .ip-location {
+            color: #ff6600;
+            font-size: 0.7rem;
+        }
+
+        .device-info {
+            color: #00ff88;
+            font-size: 0.65rem;
+            margin-top: 5px;
+        }
+
+        /* الرسالة */
+        .message {
+            color: #00ff88;
+            font-size: 0.9rem;
+            margin: 15px 0;
+            line-height: 1.5;
+        }
+
+        /* زر التبرع */
+        .donate {
+            background: linear-gradient(135deg, #009900, #00cc00);
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 25px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.8rem;
+            margin: 10px 0;
+            transition: 0.3s;
+        }
+
+        .donate:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 15px #00ff00;
+        }
+
+        /* القدس */
+        .jerusalem {
+            font-size: 0.8rem;
+            color: #ff0000;
+            margin: 8px 0;
+        }
+
+        /* حقائق */
+        .facts {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid #00ff00;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 15px auto;
+            max-width: 400px;
+            text-align: left;
+        }
+
+        .facts li {
+            color: #00ff88;
+            margin: 5px 0;
+            list-style: none;
+            font-size: 0.7rem;
+        }
+
+        /* تواقيع */
+        .footer {
+            margin-top: 20px;
+            color: #555;
+            font-size: 0.6rem;
+            border-top: 1px solid #00ff0033;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="noise"></div>
+    
+    <div class="container">
+        <div class="flag"></div>
+        
+        <div class="palestine-title">🇵🇸 FREE PALESTINE 🇵🇸</div>
+        
+        <!-- IP Display Box -->
+        <div class="ip-box">
+            <div class="ip-label">📡 YOUR IP ADDRESS</div>
+            <div class="ip-address" id="user-ip">جاري الكشف...</div>
+            <div class="ip-location" id="user-location"></div>
+            <div class="device-info" id="device-info"></div>
+        </div>
+        
+        <div class="message">
+            من النهر إلى البحر، فلسطين ستتحرر 🌊<br>
+            القدس عربية - فلسطين لنا 🇵🇸
+        </div>
+        
+        <div class="facts">
+            <li>💚  اين انتم يا عرب</li>
+             <li>🖤❤️🩶💚  لا لعدام الأسرى الفلسطينيون</li>
+            
+        </div>
+        
+      
+        
+        <div class="footer">
+            🕊️ فلسطين حرة - Free Palestine 🕊️
+        </div>
+    </div>
+
+    <script>
+        // جلب IP المستخدم
+        async function getUserIP() {
+            try {
+                const response = await fetch('https://api.ipify.org?format=json');
+                const data = await response.json();
+                const ip = data.ip;
+                document.getElementById('user-ip').innerHTML = ip;
+                
+                const geoResponse = await fetch(`https://ipapi.co/${ip}/json/`);
+                const geoData = await geoResponse.json();
+                
+                if (geoData) {
+                    const location = `${geoData.city || 'غير معروف'}, ${geoData.country_name || ''}`;
+                    document.getElementById('user-location').innerHTML = `📍 ${location}`;
+                }
+                
+            } catch (error) {
+                document.getElementById('user-ip').innerHTML = '192.168.1.1';
+                document.getElementById('user-location').innerHTML = '📍 Local Network';
+            }
+        }
+        
+        // جلب معلومات الجهاز
+        function getDeviceInfo() {
+            const ua = navigator.userAgent;
+            let device = 'Unknown';
+            
+            if (/(iPhone|iPad)/i.test(ua)) device = 'iOS';
+            else if (/Android/i.test(ua)) device = 'Android';
+            else if (/Windows/i.test(ua)) device = 'Windows';
+            else if (/Mac/i.test(ua)) device = 'Mac';
+            else if (/Linux/i.test(ua)) device = 'Linux';
+            
+            document.getElementById('device-info').innerHTML = `💻 ${device}`;
+        }
+        
+        // تشغيل
+        getUserIP();
+        getDeviceInfo();
+        
+        // تعديل عنوان الصفحة
+        let titles = ["🇵🇸 FREE PALESTINE 🇵🇸", "فلسطين حرة", "القدس لنا"];
+        let index = 0;
+        setInterval(() => {
+            document.title = titles[index % titles.length];
+            index++;
+        }, 3000);
+        
+        console.log("%c🇵🇸 FREE PALESTINE 🇵🇸", "color: #00ff00; font-size: 16px; font-weight: bold;");
+    </script>
+</body>
+</html>
